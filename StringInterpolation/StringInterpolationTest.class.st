@@ -10,6 +10,12 @@ StringInterpolationTest class >> compiler [
 	^super compiler addPlugin: StringInterpolationPlugin
 ]
 
+{ #category : #compiler }
+StringInterpolationTest class >> highlighterPlugin [
+
+	^ StringInterpolationASTHighlighterPlugin
+]
+
 { #category : #tests }
 StringInterpolationTest >> testExpressionRaisingExceptionFailsAtRuntime [
 
@@ -28,7 +34,7 @@ StringInterpolationTest >> testInterpolateExpression [
 { #category : #tests }
 StringInterpolationTest >> testInterpolateExpressionCallsAsString [
 
-	self assert: 'self asString is {self}' equals: 'self asString is ', self asString
+	self assert: 'self asString is {self}' equals: 'self asString is ', self asString  
 ]
 
 { #category : #tests }
