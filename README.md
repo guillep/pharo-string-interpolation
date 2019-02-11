@@ -29,7 +29,9 @@ MyClass class >> compiler
 
 From that moment on, you can use interpolated strings on any instance side method.
 
-## Next Steps
+## Questions and Next Steps
 
-- Getting syntax highlighting inside interpolated strings
-- making string interpolation available for global scopes (such as class sides, playgrounds...)
+ - How can I escape the `{}` characters in my string? You can escape them with the `\` character. E.g., `\{`
+ - Can I use these and the `format:` methods on String? Right now they are not compatible, since they use the same syntax.
+ - Next Step: Get other tools aware of the interpolation transformation (syntax highlighter, critics...)
+ - Next Step: making string interpolation available for global scopes (such as class sides, playgrounds...)
