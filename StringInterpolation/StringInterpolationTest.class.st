@@ -11,6 +11,15 @@ StringInterpolationTest class >> compiler [
 ]
 
 { #category : #tests }
+StringInterpolationTest >> testExpressionRaisingExceptionFailsAtRuntime [
+
+	[ '{self error: ''example error''}' ]
+		on: Error
+		do: [ :error | 
+			self assert: error messageText equals: 'example error' ]
+]
+
+{ #category : #tests }
 StringInterpolationTest >> testInterpolateExpression [
 
 	self assert: '1+1 is {1 + 1}' equals: '1+1 is 2'
