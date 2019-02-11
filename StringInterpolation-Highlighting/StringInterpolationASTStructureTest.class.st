@@ -5,7 +5,7 @@ Class {
 		'ast',
 		'sourceCode'
 	],
-	#category : #StringInterpolation
+	#category : #'StringInterpolation-Highlighting'
 }
 
 { #category : #tests }

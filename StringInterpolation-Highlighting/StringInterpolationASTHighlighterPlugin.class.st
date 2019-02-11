@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'ast'
 	],
-	#category : #StringInterpolation
+	#category : #'StringInterpolation-Highlighting'
 }
 
 { #category : #'instance creation' }

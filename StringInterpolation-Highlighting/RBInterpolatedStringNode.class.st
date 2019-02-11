@@ -5,7 +5,7 @@ Class {
 		'stringNode',
 		'patterns'
 	],
-	#category : #StringInterpolation
+	#category : #'StringInterpolation-Highlighting'
 }
 
 { #category : #'instance creation' }
