@@ -31,6 +31,28 @@ StringInterpolationTest >> testInterpolateExpressionMixingContextWithConstants [
 ]
 
 { #category : #tests }
+StringInterpolationTest >> testInterpolateFailingExpressionThrowsSyntaxError [
+
+	self
+		should: [ self class compiler evaluate: ('''1+1 is \{1*}''' reject: [ :c | c = $\ ]) ]
+		raise: SyntaxErrorNotification
+]
+
+{ #category : #tests }
+StringInterpolationTest >> testInterpolateStringSyntaxErrorHasStartAtTheBeginningOfTheFailingExpression [
+
+	| stringToEvaluate |
+	stringToEvaluate := '''1+1 is \{1*}''' reject: [ :c | c = $\ ].
+	[
+		self class compiler evaluate: stringToEvaluate.
+		
+		"Fail if the evaluation did not raise syntax error"
+		self fail ]
+	on: SyntaxErrorNotification
+	do: [ :error | self assert: error location equals: (stringToEvaluate indexOf: ${) ]
+]
+
+{ #category : #tests }
 StringInterpolationTest >> testInterpolateVariable [
 
 	| variable |
