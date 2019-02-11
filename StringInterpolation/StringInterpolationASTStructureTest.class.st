@@ -31,10 +31,10 @@ StringInterpolationASTStructureTest >> testASTHasStringInterpolationNode [
 
 { #category : #tests }
 StringInterpolationASTStructureTest >> testInterpolatedMessageStartCorrespondsToExpressionStartInString [
-	
+
 	| message |
 	message := self interpolationNode patterns anyOne.
-	self assert: message start equals: ((sourceCode indexOf: ${)).
+	self assert: message start equals: (sourceCode indexOf: ${) + 1
 ]
 
 { #category : #tests }

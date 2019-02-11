@@ -20,6 +20,12 @@ StringInterpolationASTHighlighterPlugin class >> transform [
 	self shouldBeImplemented.
 ]
 
+{ #category : #transforming }
+StringInterpolationASTHighlighterPlugin class >> transform: ast [
+
+	(self ast: ast) transform
+]
+
 { #category : #accessing }
 StringInterpolationASTHighlighterPlugin >> ast: aRBMethodNode [ 
 	ast := aRBMethodNode
